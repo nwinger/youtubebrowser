@@ -4,7 +4,12 @@ import _ from 'lodash';
 
 const VideoList = (props) => {
     const videoItems = _.map(props.videos, (video) => {
-        return <VideoListItem key={video.etag} video={video} />;
+        return (
+            <VideoListItem
+                onVideoSelect={props.onVideoSelect}
+                key={video.etag}
+                video={video} />
+        );
     });
 
     return (
